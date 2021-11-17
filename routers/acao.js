@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const exercicio = require('../controllers/exercicios.controller');
+const acao = require('../controllers/acao.controller');
 
 router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Rota de exercicios funcionando!' });
+  res.status(200).json({ message: 'Rota de ação funcionando!' });
 });
 
-router.get('/listall', exercicio.listAll);
+router.get('/listall', acao.listAll);
 
-router.get('/listname/:id', exercicio.listId);
+router.get('/listname/:id', acao.listId);
 
-router.post('/add', exercicio.add);
+router.post('/add', acao.add);
 
-router.put('/update/:id', exercicio.update);
+router.put('/update/:id', acao.update);
 
-router.delete('/delete/:id', exercicio.delete);
+router.delete('/delete/:id', acao.delete);
 
 module.exports = router;
