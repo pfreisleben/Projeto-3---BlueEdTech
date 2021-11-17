@@ -1,4 +1,4 @@
-const XXXX = require('../model/XXXX');
+const Receita = require('../model/receitas');
 
 exports.listAll = async (req, res) => {
   await Cidade.find({})
