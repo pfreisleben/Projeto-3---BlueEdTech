@@ -1,20 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const exemplo = require('../model/exemplo');
-const exemplo = require('../controllers/exemplo.controller');
+const exercicio = require('../controllers/exercicios.controller');
 
 router.get('/', (req, res) => {
-  res.status(200).json({ message: 'Rota de cidades funcionando!' });
+  res.status(200).json({ message: 'Rota de exercicios funcionando!' });
 });
 
-router.get('/listall', exemplo.listAll);
+router.get('/listall', exercicio.listAll);
 
-router.get('/listname/:name', exemplo.listName);
+router.get('/listname/:id', exercicio.listId);
 
-router.post('/add', exemplo.add);
+router.post('/add', exercicio.add);
 
-router.put('/update/:id', exemplo.update);
+router.put('/update/:id', exercicio.update);
 
-router.delete('/delete/:id', exemplo.delete);
+router.delete('/delete/:id', exercicio.delete);
 
 module.exports = router;
