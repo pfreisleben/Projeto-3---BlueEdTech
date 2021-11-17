@@ -13,15 +13,10 @@ app.get('/', (req, res) => {
   res.status(200).json({ message: 'Api Funcionando!' });
 });
 
-const cidadesRouter = require('./routers/cidades.routes');
-app.use('/cidades', cidadesRouter);
+const cidadesRouter = require('./routers/exercicio.routes');
+app.use('/exercicio', exercicioRouter);
 
-const estadosRouter = require('./routers/estados.routes');
-app.use('/estados', estadosRouter);
 
-const paisesRouter = require('./routers/paises.routes');
-app.use('/paises', paisesRouter);
-
-app.listen(port, () => {
-  console.log(`Servidor rodando em: http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
 });
