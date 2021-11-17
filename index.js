@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 const cidadesRouter = require('./routers/exercicio.routes');
 app.use('/exercicio', exercicioRouter);
 
-
 app.listen(process.env.PORT, () => {
   console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
 });
