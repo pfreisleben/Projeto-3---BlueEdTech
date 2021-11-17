@@ -1,4 +1,4 @@
-const Receita = require('../model/receitas');
+const Exercicio = require('../model/exercicios');
 
 exports.listAll = async (req, res) => {
   await Cidade.find({})
