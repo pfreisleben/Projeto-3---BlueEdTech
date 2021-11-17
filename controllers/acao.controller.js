@@ -13,12 +13,12 @@ exports.listAll = async (req, res) => {
 
 exports.listId = async (req, res) => {
   const id = req.params.id;
-  const cidade = await Jogo.find({ _id: id });
-  if (cidade.length === 0) {
+  const jogo = await Jogo.find({ _id: id });
+  if (jogo.length === 0) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   } else {
-    res.status(200).json(cidade);
+    res.status(200).json(jogo);
   }
 };
 
@@ -45,9 +45,9 @@ exports.update = async (req, res) => {
   const id = req.params.id;
   const { nome, qtdBairros, populacao, dtAniversario } = req.body;
 
-  const cidade = await Jogo.findById(id);
+  const jogo = await Jogo.findById(id);
 
-  if (!cidade) {
+  if (!jogo) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   }
@@ -67,9 +67,9 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
-  const cidade = await Jogo.findById(id);
+  const jogo = await Jogo.findById(id);
 
-  if (!cidade) {
+  if (!jogo) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   }
