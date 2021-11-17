@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const receitasModel = new mongoose.Schema({
+const exerciciosModel = new mongoose.Schema({
   nome: { type: String, required: true },
   nroSeries: { type: Number, required: true },
   nroRepeticoes: { type: Number, required: true },
