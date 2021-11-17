@@ -1,4 +1,4 @@
-const Exercicio = require('../model/exercicios');
+const Jogo = require('../model/jogos');
 
 exports.listAll = async (req, res) => {
   await Exercicio.find({})
