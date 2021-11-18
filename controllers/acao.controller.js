@@ -34,6 +34,7 @@ exports.add = async (req, res) => {
     res
       .status(400)
       .send({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
+    return;
   } else {
     await Jogo.create(req.body)
       .then(() => {
@@ -47,7 +48,7 @@ exports.add = async (req, res) => {
 
 exports.update = async (req, res) => {
   const id = req.params.id;
-  const { nome, qtdBairros, populacao, dtAniversario } = req.body;
+  const { nome, lancamento, desenvolvedora, tipo } = req.body;
 
   const jogo = await Jogo.findById(id);
 
@@ -56,7 +57,7 @@ exports.update = async (req, res) => {
     return;
   }
 
-  if (!nome || !qtdBairros || !populacao || !dtAniversario) {
+  if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
       .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
