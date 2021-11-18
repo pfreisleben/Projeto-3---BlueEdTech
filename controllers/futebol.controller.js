@@ -1,7 +1,7 @@
 const Jogo = require('../model/jogos');
 
 exports.listAll = async (req, res) => {
-  await Jogo.find({})
+  await Jogo.find({ tipo: 'futebol' })
     .then((jogos) => {
       console.log(jogos);
       res.status(200).json(jogos);

@@ -1,7 +1,7 @@
 const Jogo = require('../model/jogos');
 
 exports.listAll = async (req, res) => {
-  await Jogo.find({})
+  await Jogo.find({ tipo: 'acao' })
     .then((jogos) => {
       console.log(jogos);
       res.status(200).json(jogos);
@@ -23,13 +23,17 @@ exports.listId = async (req, res) => {
 };
 
 exports.add = async (req, res) => {
-  const { nome, qtdBairros, populacao, dtAniversario } = req.body;
+  const { nome, lancamento, desenvolvedora, tipo } = req.body;
 
-  if (!nome || !qtdBairros || !populacao || !dtAniversario) {
+  if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
       .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
     return;
+  } else if (tipo != 'ação') {
+    res
+      .status(400)
+      .send({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
   } else {
     await Jogo.create(req.body)
       .then(() => {
