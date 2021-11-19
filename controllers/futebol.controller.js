@@ -13,22 +13,22 @@ exports.listAll = async (req, res) => {
 
 exports.listId = async (req, res) => {
   const id = req.params.id;
-  const cidade = await Jogo.find({ _id: id });
-  if (cidade.length === 0) {
+  const futebol = await Jogo.find({ _id: id });
+  if (futebol.length === 0) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   } else {
-    res.status(200).json(cidade);
+    res.status(200).json(futebol);
   }
 };
 
 exports.add = async (req, res) => {
-  const { nome, qtdBairros, populacao, dtAniversario } = req.body;
+  const { nome, lancamento, desenvolvedora, tipo } = req.body;
 
-  if (!nome || !qtdBairros || !populacao || !dtAniversario) {
+  if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
-      .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
+      .send({ messagem: 'Objeto inválido. Preencha todos os campos.' });
     return;
   } else {
     await Jogo.create(req.body)
@@ -43,19 +43,19 @@ exports.add = async (req, res) => {
 
 exports.update = async (req, res) => {
   const id = req.params.id;
-  const { nome, qtdBairros, populacao, dtAniversario } = req.body;
+  const { nome, lancamento, desenvolvedora, tipo } = req.body;
 
-  const cidade = await Jogo.findById(id);
+  const futebol = await Jogo.findById(id);
 
-  if (!cidade) {
+  if (!futebol) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   }
 
-  if (!nome || !qtdBairros || !populacao || !dtAniversario) {
+  if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
-      .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
+      .send({ messagem: 'Objeto inválido. Preencha todos os campos.' });
     return;
   }
 
@@ -67,9 +67,9 @@ exports.update = async (req, res) => {
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
-  const cidade = await Jogo.findById(id);
+  const futebol = await Jogo.findById(id);
 
-  if (!cidade) {
+  if (!futebol) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
   }
