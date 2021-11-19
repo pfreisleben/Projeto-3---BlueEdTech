@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const acao = require('../controllers/acao.controller');
+const futebol = require('../controllers/futebol.controller');
 
 router.get('/', (req, res) => {
   res.status(200).json({ message: 'Rota de ação funcionando!' });
 });
 
-router.get('/listall', acao.listAll);
+router.get('/listall', futebol.listAll);
 
-router.get('/listname/:id', acao.listId);
+router.get('/listname/:id', futebol.listId);
 
-router.post('/add', acao.add);
+router.post('/add', futebol.add);
 
-router.put('/update/:id', acao.update);
+router.put('/update/:id', futebol.update);
 
-router.delete('/delete/:id', acao.delete);
+router.delete('/delete/:id', futebol.delete);
 
 module.exports = router;

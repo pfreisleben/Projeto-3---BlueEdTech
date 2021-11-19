@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const acao = require('../controllers/acao.controller');
+const terror = require('../controllers/terror.controller');
 
 router.get('/', (req, res) => {
   res.status(200).json({ message: 'Rota de ação funcionando!' });
 });
 
-router.get('/listall', acao.listAll);
+router.get('/listall', terror.listAll);
 
-router.get('/listname/:id', acao.listId);
+router.get('/listname/:id', terror.listId);
 
-router.post('/add', acao.add);
+router.post('/add', terror.add);
 
-router.put('/update/:id', acao.update);
+router.put('/update/:id', terror.update);
 
-router.delete('/delete/:id', acao.delete);
+router.delete('/delete/:id', terror.delete);
 
 module.exports = router;

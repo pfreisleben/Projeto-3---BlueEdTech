@@ -28,7 +28,7 @@ exports.add = async (req, res) => {
   if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
-      .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
+      .send({ messagem: 'Objeto inválido. Preencha todos os campos.' });
     return;
   } else if (tipo != 'ação') {
     res
@@ -60,7 +60,7 @@ exports.update = async (req, res) => {
   if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
-      .send({ messagem: 'Objeto inválido. Algum campo está com valor vazio.' });
+      .send({ messagem: 'Objeto inválido. Preencha todos os campos.' });
     return;
   }
 
