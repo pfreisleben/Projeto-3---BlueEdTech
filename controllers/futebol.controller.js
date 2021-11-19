@@ -74,7 +74,7 @@ exports.delete = async (req, res) => {
     return;
   }
 
-  await Jogo.deleteOne({ _id: id }, req.body).then(() => {
+  await Jogo.deleteOne({ _id: id }).then(() => {
     res.status(200).json({ message: 'Deletado com sucesso!' });
   });
 };

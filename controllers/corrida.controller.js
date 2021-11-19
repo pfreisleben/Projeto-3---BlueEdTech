@@ -43,7 +43,7 @@ exports.add = async (req, res) => {
 
 exports.update = async (req, res) => {
   const id = req.params.id;
-  const { nome, lancamento, desenvolvedora, tipo} = req.body;
+  const { nome, lancamento, desenvolvedora, tipo } = req.body;
 
   const corrida = await Jogo.findById(id);
 
@@ -74,7 +74,7 @@ exports.delete = async (req, res) => {
     return;
   }
 
-  await Jogo.deleteOne({ _id: id }, req.body).then(() => {
+  await Jogo.deleteOne({ _id: id }).then(() => {
     res.status(200).json({ message: 'Deletado com sucesso!' });
   });
 };
