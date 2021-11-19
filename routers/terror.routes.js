@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get('/listall', terror.listAll);
 
-router.get('/listname/:id', terror.listId);
+router.get('/listid/:id', terror.listId);
 
 router.post('/add', terror.add);
 

@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get('/listall', corrida.listAll);
 
-router.get('/listname/:id', corrida.listId);
+router.get('/listid/:id', corrida.listId);
 
 router.post('/add', corrida.add);
 

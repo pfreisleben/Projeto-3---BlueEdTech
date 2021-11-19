@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 
 router.get('/listall', acao.listAll);
 
-router.get('/listname/:id', acao.listId);
+router.get('/listid/:id', acao.listId);
 
 router.post('/add', acao.add);
 
