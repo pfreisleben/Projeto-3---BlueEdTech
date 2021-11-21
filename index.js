@@ -2,16 +2,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 app.use(express.json());
- require('dotenv').config();
+require('dotenv').config();
 
 const Conn = require('./model/conn/index');
-
 Conn();
 
 app.use(cors());
 app.options("", cors());
-
-const port = process.env.PORT;
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Api Funcionando!' });
