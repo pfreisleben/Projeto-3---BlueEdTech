@@ -46,15 +46,15 @@ Tema: _Jogos_
     "tipo": "ação",
     "__v": 0
 
-},
-{
-"\_id": "619cd9bc2a47dc002371cee7",
-"nome": "Counter Strike",
-"lancamento": "1996-01-09T00:00:00.000Z",
-"desenvolvedora": "Valve",
-"tipo": "ação",
-"\_\_v": 0
-}
+     },
+     {
+     "\_id": "619cd9bc2a47dc002371cee7",
+     "nome": "Counter Strike",
+     "lancamento": "1996-01-09T00:00:00.000Z",
+     "desenvolvedora": "Valve",
+     "tipo": "ação",
+     "\_\_v": 0
+     }
 
 ## Listando objeto específico (GET)
 
