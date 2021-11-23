@@ -30,6 +30,11 @@ exports.add = async (req, res) => {
       .status(400)
       .send({ messagem: 'Objeto inválido. Preencha todos o campos.' });
     return;
+  } else if (tipo != 'corrida') {
+    res
+      .status(400)
+      .send({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
+    return;
   } else {
     await Jogo.create(req.body)
       .then(() => {
