@@ -34,9 +34,7 @@ Tema: _Jogos_
 
 ## Os retornos da aplicação estão no formato JSON, exemplo:
 
-### {"\_id": "619cd3ec2a47dc002371ceda", "nome": "Counter Strike", "lancamento": "1996-01-09T00:00:00.000Z", "desenvolvedora": "Valve Ltda.", "tipo": "ação", "\_\_v": 0
-
-}
+     {"\_id": "619cd3ec2a47dc002371ceda", "nome": "Counter Strike", "lancamento": "1996-01-09T00:00:00.000Z", "desenvolvedora": "Valve Ltda.", "tipo": "ação", "\_\_v": 0 }
 
 ### Retorno de /acao/listall
 
