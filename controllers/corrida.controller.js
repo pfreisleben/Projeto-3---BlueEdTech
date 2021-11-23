@@ -13,7 +13,7 @@ exports.listAll = async (req, res) => {
 
 exports.listId = async (req, res) => {
   const id = req.params.id;
-  const corrida = await Jogo.find({ _id: id });
+  const corrida = await Jogo.find({ _id: id, tipo: 'corrida' });
   if (corrida.length === 0) {
     res.status(404).send({ message: 'Objeto não encontrado' });
     return;
