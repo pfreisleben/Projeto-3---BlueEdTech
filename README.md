@@ -38,6 +38,24 @@ Tema: _Jogos_
 
 ### Retorno de /acao/listall
 
+     {
+    "_id": "619cd3ec2a47dc002371ceda",
+    "nome": "Counter Strike",
+    "lancamento": "1996-01-09T00:00:00.000Z",
+    "desenvolvedora": "Valve Ltda.",
+    "tipo": "ação",
+    "__v": 0
+
+},
+{
+"\_id": "619cd9bc2a47dc002371cee7",
+"nome": "Counter Strike",
+"lancamento": "1996-01-09T00:00:00.000Z",
+"desenvolvedora": "Valve",
+"tipo": "ação",
+"\_\_v": 0
+}
+
 ## Listando objeto específico (GET)
 
 ### Deverá ser passado um parametro(nome) na rota _/{collection}/listname/{nome}_, exemplo:
