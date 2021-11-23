@@ -58,34 +58,31 @@ Tema: _Jogos_
 
 ## Listando objeto específico (GET)
 
-### Deverá ser passado um parametro(nome) na rota _/{collection}/listname/{nome}_, exemplo:
+### Deverá ser passado um parametro(id) na rota _/{collection}/listid/{id}_, exemplo:
 
-        /cidades/listname/Tatui
-        /estados/listname/São Paulo
-        /paises/listanme/Brasil
+        /acao/listid/619cd9bc2a47dc002371cee7
+        /corrida/listid/{id}
+        /estrategia/listid/{id}
+        /futebol/listid/{id}
 
 ## Adicionando novos objetos (POST)
 
-### Para adicionar um novo objeto a alguma collection, deverá ser enviado um JSON com os campos e dados corretos, caso contrário a aplicação retornará uma mensagem de erro.
+### Para adicionar um novo objeto a alguma collection, deverá ser enviado um JSON com os campos e dados corretos, caso contrário a aplicação retornará uma mensagem de erro. O tipo de filme precisa ser compativel com a rota.
 
-#### Para adicionar um novo objeto na collection _CIDADES_:
+Exemplo: se a rota for de filme de ação o valor da propridade "tipo" deve ser "ação" caso contrário retornará erro.
 
-      Rota: /cidades/add
-      Fomato JSON esperado: { "nome": String, "qtdBairros": Number, "populacao": Number, "dtAniversario": Date }
+#### Para adicionar um novo objeto em qualquer uma das collections
 
-#### Para adicionar um novo objeto na collection _ESTADOS_:
-
-      Rota: /estados/add
-      Fomato JSON esperado: { "nome": String, "regiao": String, "populacao": Number, "vlrSalarioMin": Number }
-
-#### Para adicionar um novo objeto na collection _PAISES_:
-
-      Rota: /estados/add
-      Fomato JSON esperado: { "nome": String, "populacao": Number, "linguaMae": String, "pib": Number }
+      Rota: /{{collection}}/add
+      Fomato JSON esperado: { "nome": String, "lancamento": Date, "desenvolvedora": String, "tipo": String }
 
 ### Caso exista algum problema com os dados do JSON enviado, a aplicação retornará:
 
-      {"messagem": "Objeto inválido. Algum campo está com valor vazio."}
+      {"message": "Objeto inválido. Algum campo está com valor vazio."}
+
+### Caso o tipo do filme informado seja incompativel com a rota usada:
+
+      {"message": "Objeto inválido. O tipo do jogo deve ser do tipo {{collection}}"}
 
 ### Caso o objeto seja adicionado com sucesso, a API retornará o seguinte JSON:
 
@@ -95,20 +92,10 @@ Tema: _Jogos_
 
 ### Para atualizar um objeto de alguma collection, deverá ser informado o ID do objeto na rota, e enviado um JSON com os novos valores através do método PUT.
 
-#### Para atualizar um novo objeto na collection _CIDADES_:
+#### Para atualizar qualquer um dos objetos:
 
-      Rota: /cidades/update/{id}
-      Fomato JSON esperado: { "nome": String, "qtdBairros": Number, "populacao": Number, "dtAniversario": Date }
-
-#### Para adicionar um novo objeto na collection _ESTADOS_:
-
-      Rota: /estados/update/{id}
-      Fomato JSON esperado: { "nome": String, "regiao": String, "populacao": Number, "vlrSalarioMin": Number }
-
-#### Para adicionar um novo objeto na collection _PAISES_:
-
-      Rota: /estados/update/{id}
-      Fomato JSON esperado: { "nome": String, "populacao": Number, "linguaMae": String, "pib": Number }
+      Rota: /{collection}/update/{id}
+      Fomato JSON esperado: { "nome": String, "lancamento": Date, "desenvolvedora": String, "tipo": String }
 
 ### Caso o objeto seja atualizado com sucesso, a API retornará o seguinte JSON:
 
@@ -118,17 +105,9 @@ Tema: _Jogos_
 
 ### Para deletar um objeto de alguma collection, deverá ser informado o ID do objeto na rota.
 
-#### Para deletar um objeto na collection _CIDADES_:
+#### Para deletar qualquer um dos objetos:
 
-      Rota: /cidades/delete/{id}
-
-#### Para deletar um objeto na collection _ESTADOS_:
-
-      Rota: /estados/update/{id}
-
-#### Para deletar um objeto na collection _PAISES_:
-
-      Rota: /estados/update/{id}
+      Rota: /{collection}/delete/{id}
 
 ### Caso o objeto seja deletado com sucesso, a API retornará o seguinte JSON:
 
