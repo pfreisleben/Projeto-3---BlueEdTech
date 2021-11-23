@@ -33,7 +33,7 @@ exports.add = async (req, res) => {
   } else if (tipo != 'estrategia') {
     res
       .status(400)
-      .send({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
+      .send({ message: 'Objeto inválido. O tipo do jogo deve ser estrategia' });
     return;
   } else {
     await Jogo.create(req.body)
