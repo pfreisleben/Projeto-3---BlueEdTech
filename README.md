@@ -67,9 +67,9 @@ Tema: _Jogos_
 
 ## Adicionando novos objetos (POST)
 
-### Para adicionar um novo objeto a alguma collection, deverá ser enviado um JSON com os campos e dados corretos, caso contrário a aplicação retornará uma mensagem de erro. O tipo de filme precisa ser compativel com a rota.
+### Para adicionar um novo objeto a alguma collection, deverá ser enviado um JSON com os campos e dados corretos, caso contrário a aplicação retornará uma mensagem de erro. O tipo do jogo precisa ser compativel com a rota.
 
-Exemplo: se a rota for de filme de ação o valor da propridade "tipo" deve ser "ação" caso contrário retornará erro.
+Exemplo: se a rota for de jogo de ação o valor da propridade "tipo" deve ser "ação" caso contrário retornará erro.
 
 #### Para adicionar um novo objeto em qualquer uma das collections
 
@@ -80,7 +80,7 @@ Exemplo: se a rota for de filme de ação o valor da propridade "tipo" deve ser 
 
       {"message": "Objeto inválido. Algum campo está com valor vazio."}
 
-### Caso o tipo do filme informado seja incompativel com a rota usada:
+### Caso o tipo do jogo informado seja incompativel com a rota usada:
 
       {"message": "Objeto inválido. O tipo do jogo deve ser do tipo {{collection}}"}
 
