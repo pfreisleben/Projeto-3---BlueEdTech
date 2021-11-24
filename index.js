@@ -8,7 +8,7 @@ const Conn = require('./model/conn/index');
 Conn();
 
 app.use(cors());
-app.options("", cors());
+app.options('', cors());
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Api Funcionando!' });
@@ -27,7 +27,7 @@ const futebolRouter = require('./routers/futebol.routes');
 app.use('/futebol', futebolRouter);
 
 const terrorRouter = require('./routers/terror.routes');
-app.use('/terror', terrorRouter); 
+app.use('/terror', terrorRouter);
 
 app.listen(process.env.PORT, () => {
   console.log(`Servidor rodando em: http://localhost:${process.env.PORT}`);
