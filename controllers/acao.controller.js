@@ -28,12 +28,12 @@ exports.add = async (req, res) => {
   if (!nome || !lancamento || !desenvolvedora || !tipo) {
     res
       .status(400)
-      .send({ messagem: 'Objeto inválido. Preencha todos os campos.' });
+      .json({ messagem: 'Objeto inválido. Preencha todos os campos.' });
     return;
   } else if (tipo != 'ação') {
     res
       .status(400)
-      .send({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
+      .json({ message: 'Objeto inválido. O tipo do jogo deve ser ação' });
     return;
   } else {
     await Jogo.create(req.body)
