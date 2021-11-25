@@ -7,8 +7,8 @@ require('dotenv').config();
 const Conn = require('./model/conn/index');
 Conn();
 
-app.use(cors());
-app.options('', cors());
+// app.use(cors());
+// app.options('', cors());
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Api Funcionando!' });
